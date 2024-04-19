@@ -37,6 +37,18 @@ python manage.py runserver
 - `/services/`: Endpoint for managing services offered.
 - `/appointments/`: Endpoint for managing appointments.
 
+MedSpa Endpoints:
+List/Create MedSpas: GET /api/v1/medspas/
+Retrieve/Update/Delete MedSpa: GET /api/v1/medspas/<id>/, PUT /api/v1/medspas/<id>/, DELETE /api/v1/medspas/<id>/
+
+Service Endpoints:
+List/Create Services: GET /api/v1/services/
+Retrieve/Update/Delete Service: GET /api/v1/services/<id>/, PUT /api/v1/services/<id>/, DELETE /api/v1/services/<id>/
+
+Appointment Endpoints:
+List/Create Appointments: GET /api/v1/appointments/
+Retrieve/Update/Delete Appointment: GET /api/v1/appointments/<id>/, PUT /api/v1/appointments/<id>/, DELETE /api/v1/appointments/<id>/
+
 ## Technologies Used
 
 - **Django**: Python-based web framework for building web applications quickly and efficiently.
