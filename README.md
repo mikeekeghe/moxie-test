@@ -12,6 +12,8 @@ pipenv shell
 pipenv install djangorestframework
 pipenv install markdown # Markdown support for the browsable API.
 pipenv install django-filter # Filtering support
+pipenv install psycopg2-binary
+pipenv install psycopg2
 
 
 - Create Django project and apps:
@@ -57,9 +59,11 @@ Retrieve/Update/Delete Appointment: GET /api/v1/appointments/<id>/, PUT /api/v1/
 
 ## Contributors
 
-- [Your Name or Organization](https://github.com/yourusername)
+- Mike Ekeghe(https://github.com/mikeekeghe)
 
-## License
+## to run in dev server
+- pipenv shell
+python manage.py runserver
 
-This project is licensed under the [MIT License](LICENSE).
+
 
