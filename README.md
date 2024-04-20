@@ -2,7 +2,8 @@
 
 ## Description
 
-Moxie API is a RESTful API built using the Django framework. It provides endpoints for managing a variety of activities related to a hypothetical business.
+Moxie API is a RESTful API built using the Django framework. It provides endpoints for managing a variety of activities related to a Moxie medspas, services and appointments
+,.
 
 ## Activities
 
