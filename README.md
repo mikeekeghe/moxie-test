@@ -65,5 +65,8 @@ Retrieve/Update/Delete Appointment: GET /api/v1/appointments/<id>/, PUT /api/v1/
 - pipenv shell
 python manage.py runserver
 
+## to run the app in docker
+docker build -t my-django-app .
+docker run --name my-django-container -p 8000:8000 my-django-app
 
 
