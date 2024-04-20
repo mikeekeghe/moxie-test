@@ -89,13 +89,14 @@ WSGI_APPLICATION = "moxieapi.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
+        'NAME': 'mydatabase',
+        'USER': 'mydatabaseuser',
         'PASSWORD': 'mypassword',
-        'HOST': 'my-postgres',  
+        'HOST': 'db',
         'PORT': '5432',
     }
 }
+
 
 
 

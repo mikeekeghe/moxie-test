@@ -69,4 +69,6 @@ python manage.py runserver
 docker build -t my-django-app .
 docker run --name my-django-container -p 8000:8000 my-django-app
 
+## to run the app in docker using docker compose using dockerised postgress
+docker-compose up --build
 
