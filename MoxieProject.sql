@@ -1,48 +1,44 @@
-SET check_function_bodies = false
-;
+CREATE SCHEMA IF NOT EXISTS public;
 
-CREATE TYPE status_type_enum AS ENUM(Scheduled
-Completed
-Canceled);
+CREATE TYPE public.status_type_enum AS ENUM('Scheduled', 'Completed', 'Canceled');
 
-CREATE TABLE appointment(
-  id integer NOT NULL,
+CREATE TABLE public.appointment(
+  id SERIAL PRIMARY KEY,
   start_time timestamp NOT NULL,
   total_duration integer NOT NULL,
   total_price integer NOT NULL,
   status status_type_enum NOT NULL,
-  medspa_id integer NOT NULL,
-  CONSTRAINT appointment_pkey PRIMARY KEY(id)
+  medspa_id integer NOT NULL
 );
 
-CREATE TABLE medspa(
-  id integer NOT NULL,
-  "name" varchar NOT NULL,
+CREATE TABLE public.medspa(
+  id SERIAL PRIMARY KEY,
+  name varchar NOT NULL,
   address varchar NOT NULL,
   phone_number varchar,
-  email varchar,
-  CONSTRAINT medspa_pkey PRIMARY KEY(id)
+  email varchar
 );
 
-CREATE TABLE service(
-  id integer NOT NULL,
-  "name" varchar NOT NULL,
+CREATE TABLE public.service(
+  id SERIAL PRIMARY KEY,
+  name varchar NOT NULL,
   description varchar,
   price varchar NOT NULL,
   duration varchar NOT NULL,
   medspa_id integer NOT NULL,
-  appointment_id integer NOT NULL,
-  CONSTRAINT service_pkey PRIMARY KEY(id)
+  appointment_id integer NOT NULL
 );
 
-ALTER TABLE appointment
+ALTER TABLE public.appointment
   ADD CONSTRAINT appointment_medspa_id_fkey
-    FOREIGN KEY (medspa_id) REFERENCES medspa (id);
+    FOREIGN KEY (medspa_id) REFERENCES public.medspa (id);
 
-ALTER TABLE service
+ALTER TABLE public.service
   ADD CONSTRAINT service_medspa_id_fkey
-    FOREIGN KEY (medspa_id) REFERENCES medspa (id);
+    FOREIGN KEY (medspa_id) REFERENCES public.medspa (id);
 
-ALTER TABLE service
+ALTER TABLE public.service
   ADD CONSTRAINT service_appointment_id_fkey
-    FOREIGN KEY (appointment_id) REFERENCES appointment (id);
+    FOREIGN KEY (appointment_id) REFERENCES public.appointment (id);
+
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
