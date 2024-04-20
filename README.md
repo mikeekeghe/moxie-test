@@ -5,26 +5,23 @@
 Moxie API is a RESTful API built using the Django framework. It provides endpoints for managing a variety of activities related to a Moxie medspas, services and appointments
 ,.
 
-## Activities
-
+## Activity logs
 - Install Django and necessary dependencies:
-pipenv install django
-pipenv shell
-pipenv install djangorestframework
-pipenv install markdown # Markdown support for the browsable API.
-pipenv install django-filter # Filtering support
-pipenv install psycopg2-binary
-pipenv install psycopg2
-
-
+- pipenv install django
+- pipenv shell
+- pipenv install djangorestframework
+- pipenv install markdown # Markdown support for the browsable API.
+- pipenv install django-filter # Filtering support
+- pipenv install psycopg2-binary
+- pipenv install psycopg2
 - Create Django project and apps:
-django-admin startproject moxieapi .
-python manage.py startapp medspa
-python manage.py startapp services
-python manage.py startapp appointments
-
-
+- django-admin startproject moxieapi .
+- python manage.py startapp medspa
+- python manage.py startapp services
+- python manage.py startapp appointments
 - Update model, view, and URL files as per your requirements.
+- create Dockerfile
+- create Docker-compose.yml file
 
 ## Steps to Run the Application
 
@@ -41,16 +38,19 @@ python manage.py runserver
 - `/appointments/`: Endpoint for managing appointments.
 
 MedSpa Endpoints:
-List/Create MedSpas: GET /api/v1/medspas/
-Retrieve/Update/Delete MedSpa: GET /api/v1/medspas/<id>/, PUT /api/v1/medspas/<id>/, DELETE /api/v1/medspas/<id>/
+- List/Create MedSpas: GET /api/v1/medspas/
+- Retrieve/Update/Delete MedSpa: GET /api/v1/medspas/<id>/, PUT 
+- /api/v1/medspas/<id>/, DELETE /api/v1/medspas/<id>/
 
 Service Endpoints:
-List/Create Services: GET /api/v1/services/
-Retrieve/Update/Delete Service: GET /api/v1/services/<id>/, PUT /api/v1/services/<id>/, DELETE /api/v1/services/<id>/
+- List/Create Services: GET /api/v1/services/
+- Retrieve/Update/Delete Service: GET /api/v1/services/<id>/, PUT 
+- /api/v1/services/<id>/, DELETE /api/v1/services/<id>/
 
 Appointment Endpoints:
-List/Create Appointments: GET /api/v1/appointments/
-Retrieve/Update/Delete Appointment: GET /api/v1/appointments/<id>/, PUT /api/v1/appointments/<id>/, DELETE /api/v1/appointments/<id>/
+- List/Create Appointments: GET /api/v1/appointments/
+- Retrieve/Update/Delete Appointment: GET /api/v1/appointments/<id>/, PUT 
+- /api/v1/appointments/<id>/, DELETE /api/v1/appointments/<id>/
 
 ## Technologies Used
 
@@ -64,11 +64,11 @@ Retrieve/Update/Delete Appointment: GET /api/v1/appointments/<id>/, PUT /api/v1/
 
 ## to run in dev server
 - pipenv shell
-python manage.py runserver
+- python manage.py runserver
 
 ## to run the app in docker
-docker build -t my-django-app .
-docker run --name my-django-container -p 8000:8000 my-django-app
+- docker build -t my-django-app .
+- docker run --name my-django-container -p 8000:8000 my-django-app
 
 ## to run the app in docker using docker compose using dockerised postgress
 docker-compose up --build
