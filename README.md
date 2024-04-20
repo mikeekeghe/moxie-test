@@ -59,7 +59,7 @@ Retrieve/Update/Delete Appointment: GET /api/v1/appointments/<id>/, PUT /api/v1/
 
 ## Contributors
 
-- Mike Ekeghe(https://github.com/mikeekeghe)
+- Mike Ekeghe (https://github.com/mikeekeghe)
 
 ## to run in dev server
 - pipenv shell
