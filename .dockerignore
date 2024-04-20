@@ -1,0 +1,20 @@
+# Ignore common Python/Django files
+*.pyc
+__pycache__
+*.pyo
+*.pyd
+*.pyo
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.sql
+*.log
+
+# Ignore Docker-related files
+.dockerignore
+Dockerfile
+
+# Ignore version control directories and files
+.git
+.gitignore
