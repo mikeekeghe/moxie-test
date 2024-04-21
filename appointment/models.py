@@ -1,3 +1,4 @@
+import json
 from django.db import models
 from medspa.models import MedSpa
 
@@ -19,3 +20,12 @@ class Appointment(models.Model):
 
     def __str__(self):
         return f"Appointment at {self.start_time} for {self.medspa}"
+
+    def save(self, *args, **kwargs):
+        # Serialize services data before saving
+        self.services = json.dumps(self.services)
+        super().save(*args, **kwargs)
+
+    def get_services(self):
+        # Deserialize services data during retrieval
+        return json.loads(self.services)
