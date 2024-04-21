@@ -4,4 +4,10 @@ from .models import MedSpa
 class MedSpaSerializer(serializers.ModelSerializer):
     class Meta:
         model = MedSpa
-        fields = ['id', 'name', 'address', 'phone_number', 'email']
+        fields = [
+            'id', 
+            'name', 
+            'address', 
+            'phone_number', 
+            'email', 
+            ]
