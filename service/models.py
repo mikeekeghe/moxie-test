@@ -1,4 +1,5 @@
 from django.db import models
+from appointment.models import Appointment
 from medspa.models import MedSpa
 
 class Service(models.Model):
@@ -7,7 +8,7 @@ class Service(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     duration = models.DurationField()
     medspa = models.ForeignKey(MedSpa, on_delete=models.CASCADE, related_name='services')
-    appointment_id = models.IntegerField(default=None, blank=True, null=True)
+    appointment = models.ForeignKey(Appointment, on_delete=models.CASCADE, related_name='service_instances', null=True)
 
     class Meta:
         db_table = 'service'
