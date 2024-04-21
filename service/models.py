@@ -8,5 +8,8 @@ class Service(models.Model):
     duration = models.DurationField()
     medspa = models.ForeignKey(MedSpa, on_delete=models.CASCADE, related_name='services')
 
+    class Meta:
+        db_table = 'service'
+
     def __str__(self):
         return self.name

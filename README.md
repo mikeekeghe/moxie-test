@@ -75,3 +75,32 @@ docker-compose up --build
 
 ## query db in docker
 psql -h localhost -p 5432 -U mydatabaseuser -d mydatabase
+
+\dt;
+
+-medspa
+
+- Select all records from the medspa table:
+- SELECT * FROM public.medspa;
+
+- Describe the structure of the medspa table:
+- \d medspa
+
+- Select all records from the appointment table:
+- SELECT * FROM public.appointment;
+
+- Describe the structure of the appointment table:
+- \d appointment
+
+-service
+
+- Select all records from the service table:
+- SELECT * FROM public.service;
+
+- Describe the structure of the service table:
+- \d service
+
+
+SET search_path TO public;
+
+
