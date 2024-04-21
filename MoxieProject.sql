@@ -8,6 +8,7 @@ CREATE TABLE public.appointment(
   total_duration integer NOT NULL,
   total_price integer NOT NULL,
   status status_type_enum NOT NULL,
+  services json,
   medspa_id integer NOT NULL
 );
 

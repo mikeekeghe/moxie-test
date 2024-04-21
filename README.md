@@ -73,3 +73,5 @@ Appointment Endpoints:
 ## to run the app in docker using docker compose using dockerised postgress
 docker-compose up --build
 
+## query db in docker
+psql -h localhost -p 5432 -U mydatabaseuser -d mydatabase
